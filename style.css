@@ -38,7 +38,9 @@ header p{
 }
 
 @keyframes typing {
-  from { width: 0% 
+  from { width: 95% 
+  } 
+  to{ width: 110% 
   } 
 }
 
