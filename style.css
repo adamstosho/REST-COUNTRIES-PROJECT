@@ -6,13 +6,15 @@
 }
 
 body {
-  font-family: cursive;
+  font-family: cursive, 'Times New Roman', Times, serif;
   background-color: #f4f4f4;
   text-align: center;
   height: 100vh;
   background-image: url(https://files.oaiusercontent.com/file-CxPp2HEfrwfXQbbW21bBeW?se=2025-03-28T14%3A58%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D22237148-f693-4b4f-81e8-a6f8dea3d967.webp&sig=7eeZzcwGKHHmPm4rtkW2O4YKQc/K1Tc05whJHpAOLcU%3D);
   background-size: contain;
   opacity: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -130,7 +132,7 @@ footer{
   padding: 20px;
   margin-top: 10px;
   font-weight: bolder;
-  position: fixed;
+  /* position: fixed;
   width: 100%;
-  top: 610px;
+  top: 610px; */
 }
