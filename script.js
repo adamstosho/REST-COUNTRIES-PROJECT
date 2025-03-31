@@ -4,7 +4,7 @@ const countriesContainer = document.getElementById("countriesContainer");
 
 let allCountries = [];
 
-// Fetch all countries data at once
+// Fetch all countries data from the API and catching the error
 async function fetchAllCountries() {
   try {
     const response = await fetch("https://restcountries.com/v3.1/all");
@@ -39,17 +39,37 @@ function displayCountries(mainCountry, neighborCountry) {
   if (neighborCountry) {
     const neighborCountryCard = createCountryCard(neighborCountry, "");
     countriesContainer.appendChild(neighborCountryCard);
+    
+    // Adding title for neighboring country
+    const neighborTitle = document.createElement("h3");
+    neighborTitle.textContent = "Neighbouring Country";
+    
+    neighborTitle.style.position = "absolute";
+    neighborTitle.style.top = "-10px";
+    neighborTitle.style.left = "69%";
+    neighborTitle.style.transform = "translateX(-50%)";
+    neighborTitle.style.backgroundColor = "#f0f0f0";
+    neighborTitle.style.padding = "5px 10px";
+    neighborTitle.style.borderRadius = "5px";
+    neighborTitle.style.fontFamily = "Times New Roman";
+    neighborTitle.style.fontSize = "14px";
+    neighborTitle.style.marginTop = "5px";
+    neighborTitle.style.boxShadow = "0px 2px 5px rgba(0, 0, 0, 0.2)";
+    countriesContainer.style.position = "relative";
+    countriesContainer.appendChild(neighborTitle);
+    neighborCountryCard.style.transform = "scale(0.85)";
   }
 }
 
-// Create a country card element
-function createCountryCard(country, title) {
+
+// Creating a country card elements
+function createCountryCard(country) {
   const countryCard = document.createElement("div");
   countryCard.classList.add("country-card");
 
   countryCard.innerHTML = `
     
-    <img src="${country.flags?.png || "https://via.placeholder.com/150"}" alt="${country.name?.common || "Unknown"} flag">
+    <img src="${country.flags?.png || "https://shorturl.at/pJjfv"}" alt="${country.name?.common || "Unknown"} flag">
     <div>
     <h2>${country.name?.common || "Unknown"}</h2>
     <p>🌆 ${country.region || "Unknown"}</p>
@@ -91,8 +111,13 @@ fetchAllCountries();
 
 
 
-// Show all countries data to the console
-function logAllCountriesToConsole() {
-  console.log("All Countries Data:", allCountries);
-}
-logAllCountriesToConsole()
+// Function to log all countries' details to the console after fetching them
+// async function logAllCountries() {
+//   if (allCountries.length === 0) {
+//     await fetchAllCountries(); 
+//   }
+//   console.log(allCountries);
+// }
+// logAllCountries();
+
+
