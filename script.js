@@ -39,11 +39,11 @@ function displayCountries(mainCountry, neighborCountry) {
   if (neighborCountry) {
     const neighborCountryCard = createCountryCard(neighborCountry, "");
     countriesContainer.appendChild(neighborCountryCard);
-    
+
     // Adding title for neighboring country
     const neighborTitle = document.createElement("h3");
     neighborTitle.textContent = "Neighbouring Country";
-    
+
     neighborTitle.style.position = "absolute";
     neighborTitle.style.top = "-10px";
     neighborTitle.style.left = "69%";
@@ -114,7 +114,7 @@ fetchAllCountries();
 // Function to log all countries' details to the console after fetching them
 // async function logAllCountries() {
 //   if (allCountries.length === 0) {
-//     await fetchAllCountries(); 
+//     await fetchAllCountries();
 //   }
 //   console.log(allCountries);
 // }
