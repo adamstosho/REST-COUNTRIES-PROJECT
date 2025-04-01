@@ -35,7 +35,7 @@ function displayCountries(mainCountry, neighborCountry) {
   const mainCountryCard = createCountryCard(mainCountry, "");
   countriesContainer.appendChild(mainCountryCard);
 
-  // Neighboring Country (if available)
+  // Neighboring and styling using JS
   if (neighborCountry) {
     const neighborCountryCard = createCountryCard(neighborCountry, "");
     countriesContainer.appendChild(neighborCountryCard);
